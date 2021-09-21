@@ -1,0 +1,68 @@
+article {
+  background-image: linear-gradient(
+    to bottom,
+    transparent 50px,
+    #fdef67 50px,
+    #fdef67 calc(100% - 50px),
+    transparent 0
+  );
+  margin: auto auto 50px auto;
+}
+.category,
+.title,
+.footer {
+  position: -webkit-sticky;
+  position: sticky;
+  height: 50px;
+}
+.category {
+  top: 0;  
+  color: #f83d23;
+  text-shadow: 5px 5px 0 dodgerblue;
+}
+
+.title {
+  top: 0;  
+  color: #fdef67;
+  text-shadow: 2px 2px 0 #f83d23;
+  background-color: dodgerblue;
+  margin: 0;
+}
+
+.footer {
+  bottom: 100px;
+  z-index: -1;
+  color: white;
+  text-shadow: 1px 1px black;
+  background-color: #f83d23;
+  width: 80%;
+  margin: 50px auto auto auto;
+}
+
+.emptyBlocks {
+  background-color: #ccc;
+  height: 200px;
+  margin: 40px auto;
+}
+
+article,
+.emptyBlocks {
+  width: 80vw;
+  max-width: 420px;
+}
+
+@media (max-width: 420px) {
+  .category {
+    font: 24px/72px "Titan One";
+    text-align: center;
+  }
+  .footer {
+    font-size: 9pt;
+  }
+}
+
+@media (max-height: 946px){
+  .tallScreenText{
+    display: none;
+  }
+}
