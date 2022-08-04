@@ -2,7 +2,18 @@ window.onload = function(e){
   js.init();
 };
 
+
+(function(){
+  console.log("Soy una autofuncion?");
+})();
+
+var f_arrow = (() => {
+  console.log("soy una funcion flecha");
+});
+
 var js = (() => {
+
+  f_arrow();
   var ctx;
   var factorvalue = 1; // valor de escalado
   var fontfamily = "65px 'Gill Sans Ultra Bold', sans-serif";
@@ -118,9 +129,12 @@ var js = (() => {
     ctx.closePath();
     ctx.fill();
   };
-8
+
   let init  = function()
   {
+
+
+
     // arrays
     var a = Array.from('foo');
     console.log(a);
