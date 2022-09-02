@@ -1,3 +1,9 @@
-## Javascript
+# Javascript
 
-# Random Js samples
+## Random Js samples
+
+- Data structure 
+- Algorithms
+- POO
+- Features
+- Snippets, etc.
