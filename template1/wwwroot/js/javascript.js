@@ -130,11 +130,8 @@ var js = (() => {
     ctx.fill();
   };
 
-  let init  = function()
+  let arrays  = function()
   {
-
-
-
     // arrays
     var a = Array.from('foo');
     console.log(a);
@@ -163,17 +160,81 @@ var js = (() => {
     });
     console.log(a);
   };
-  
 
-  var changescale = function (val) {
+  let nanFunctions = function(){
+      console.log( isNaN(NaN) ); // true
+      console.log(isNaN(Infinity));
+      console.log(isNaN(null));
+      console.log(isNaN(13.22));
+      console.log(isNaN("13.22"));
+      console.log(isNaN(undefined));
+      console.log(isNaN({}));
+
+      //
+      console.log(Number.isNaN(true));
+      console.log(Number.isNaN(new Date));
+      console.log(Number.isNaN([]));
+      console.log(Number.isNaN({}));
+
+      console.log(Number.MAX_VALUE);
+      console.log(Number.MAX_SAFE_INTEGER);
+      console.log(Number.MIN_VALUE);
+      console.log(Number.MIN_SAFE_INTEGER);
+      console.log(Number.EPSILON);
+      console.log(Number.POSITIVE_INFINITY);
+      console.log(Number.NEGATIVE_INFINITY);
+  };
+
+  let consoleFunctions = function(){
+    console.time('response in');
+
+    console.log('Click to continue');
+    console.timeEnd('response in');
+
+
+    console.log('One more time');
+    console.time('response out')
+    console.timeEnd('response out');
+
+    console.time('loop-time');
+    let elems = document.getElementsByTagName('*');
+    for(var i = 0;i<5000;i++){
+      for(var j=0;j<elems.length;j++){
+          // repeat
+      }
+    }
+    console.timeEnd('loop-time');
+
+  };
+
+  let changescale = function (val) {
     factorvalue = val / 100;
     dologo();
   };
 
-  initLogo();
+  let objects = function(){
+      let o1 = Object.create({x: 10, y: 21 });
+      console.log("{o1.x, o1.y} = " + JSON.stringify(o1));
+
+      let o2 = {x: 10, y: 21 };
+      console.log("{o2.x, o2.y} = " + JSON.stringify(o2));
+
+      let o3 = Object.create(Object.prototype);
+      console.log(o3); // objeto vacio o {}
+  };
+
+  var init = function(){
+    arrays();
+    nanFunctions();
+    consoleFunctions();
+    objects();
+
+
+    initLogo();
+    changescale();
+  };
 
   return {
-    changescale: changescale,
     init: init
   };
 })();
